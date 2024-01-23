@@ -60,8 +60,6 @@
     <link rel="next" href="资源管理.html" />
     
     
-    <link rel="prev" href="../" />
-    
 
     </head>
     <body>
@@ -102,7 +100,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="资源管理.html">
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    [个人介绍]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="资源管理.html">
             
                 <a href="资源管理.html">
             
@@ -116,7 +127,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="资源管理.html">
+        <li class="chapter active" data-level="1.3.1" data-path="资源管理.html">
             
                 <a href="资源管理.html">
             
@@ -179,7 +190,58 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="lvjiaqigithubio">lvjiaqi.github.io</h1>
+                                <h1 id="cocoapods&#x7BA1;&#x7406;ios&#x8D44;&#x6E90;">CocoaPods&#x7BA1;&#x7406;iOS&#x8D44;&#x6E90;</h1>
+<h2 id="podspec&#x58F0;&#x660E;&#x8D44;&#x6E90;&#x5F15;&#x5165;&#x7684;&#x65B9;&#x5F0F;">.podspec&#x58F0;&#x660E;&#x8D44;&#x6E90;&#x5F15;&#x5165;&#x7684;&#x65B9;&#x5F0F;</h2>
+<h3 id="sresources">s.resources</h3>
+<p>&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x590D;&#x5236;&#x5230;&#x4EA7;&#x7269;&#x4E2D;</p>
+<pre><code class="lang-ruby">s.resources = [<span class="hljs-string">&apos;JQ_bundle_static/JQ_bundle_static.bundle&apos;</span>, <span class="hljs-string">&apos;JQ_bundle_static/Assets/*&apos;</span>]
+</code></pre>
+<p>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x5C06;&#x901A;&#x8FC7;&#x811A;&#x672C;Pods-xxx-resources.sh&#x811A;&#x672C;&#x590D;&#x5236;&#x5230;&#x9879;&#x76EE;&#x4E2D;, &#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8DEF;&#x5F84;&#x662F;&#x8D44;&#x6E90;&#x7684;&#x76EE;&#x5F55; <strong>${PODS_ROOT}/../specs/</strong></p>
+<pre><code class="lang-shell">....
+install_resource()
+{
+    ....
+}
+install_resource &quot;${PODS_ROOT}/../specs/JQ_bundle_static/JQ_bundle_static/JQ_bundle_static.bundle&quot;
+install_resource &quot;${PODS_ROOT}/../specs/JQ_bundle_static/JQ_bundle_static/Assets/2.png&quot;
+....
+</code></pre>
+<p><img src="images/2.png" alt="1">
+&#x5728;&#x9879;&#x76EE;&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;mainbundle&#x83B7;&#x53D6;</p>
+<pre><code class="lang-objc"><span class="hljs-built_in">UIImage</span> *mainImage = [<span class="hljs-built_in">UIImage</span> imageNamed:<span class="hljs-string">@&quot;2&quot;</span>];
+<span class="hljs-built_in">UIImage</span> *mainImage = [<span class="hljs-built_in">UIImage</span> imageNamed:<span class="hljs-string">@&quot;2&quot;</span> inBundle:[<span class="hljs-built_in">NSBundle</span> mainBundle] withConfiguration:<span class="hljs-literal">nil</span>];
+</code></pre>
+<p>&#x4F7F;&#x7528;s.resources&#x76F4;&#x63A5;&#x5C06;&#x8D44;&#x6E90;&#x590D;&#x5236;&#x5230;&#x4EA7;&#x7269;&#x4E2D;&#x4F1A;&#x4F7F;&#x5F97;&#x6574;&#x4E2A;&#x8D44;&#x6E90;&#x7684;&#x7BA1;&#x7406;&#x6BD4;&#x8F83;&#x6DF7;&#x4E71;&#xFF0C;&#x7531;&#x4E8E;&#x76EE;&#x524D;&#x90FD;&#x662F;&#x6A21;&#x5757;&#x5316;&#x7BA1;&#x7406;&#x65B9;&#x5F0F;&#xFF0C;&#x8D44;&#x6E90;&#x540D;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x91CD;&#x590D;</p>
+<h3 id="sresourcebundles">s.resource_bundles</h3>
+<p>&#x4F1A;&#x5C06;&#x5BF9;&#x5E94;&#x7684;&#x8D44;&#x6E90;&#x6253;&#x5305;&#x6210;bundle&#xFF0C;&#x7136;&#x540E;&#x5728;&#x590D;&#x5236;&#x5230;&#x4EA7;&#x7269;&#x4E2D;</p>
+<pre><code class="lang-ruby">s.resource_bundles = {
+    <span class="hljs-string">&apos;JQ_bundle_source&apos;</span> =&gt; [<span class="hljs-string">&apos;JQ_bundle_source/Assets/*&apos;</span>]
+  }
+</code></pre>
+<p>CocoaPods&#x4F1A;&#x7ED9;&#x5176;&#x521B;&#x5EFA;&#x72EC;&#x7ACB;&#x7684;target&#x5355;&#x5143;&#x914D;&#x7F6E;&#xFF0C;&#x8FD8;&#x4F1A;&#x5C06;xcassets&#x6587;&#x4EF6;&#x7F16;&#x8BD1;&#x6210;car&#x6587;&#x4EF6;</p>
+<p><img src="images/1.png" alt="1"></p>
+<p>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x5C06;&#x901A;&#x8FC7;&#x811A;&#x672C;Pods-xxx-resources.sh&#x811A;&#x672C;&#x590D;&#x5236;&#x5230;&#x9879;&#x76EE;&#x4E2D;, &#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8DEF;&#x5F84;&#x662F;bundle&#x7F16;&#x8BD1;&#x7684;&#x4EA7;&#x7269;&#x8DEF;&#x5F84; <strong>${PODS_CONFIGURATION_BUILD_DIR}...</strong></p>
+<pre><code class="lang-shell">install_resource()
+{
+    ....
+}
+install_resource &quot;${PODS_CONFIGURATION_BUILD_DIR}/JQ_bundle_source/JQ_bundle_source.bundle&quot;
+....
+</code></pre>
+<p><img src="images/3.png" alt="1"></p>
+<p>&#x5728;&#x9879;&#x76EE;&#x91CC;&#x9762;&#x9700;&#x8981;&#x6307;&#x5B9A;bundle&#x540D;&#x79F0;&#x83B7;&#x53D6;&#x8D44;&#x6E90;</p>
+<pre><code class="lang-objc"><span class="hljs-built_in">NSBundle</span> *bundle = [<span class="hljs-built_in">NSBundle</span> bundleWithPath:[[<span class="hljs-built_in">NSBundle</span> mainBundle] pathForResource:bundleName ofType:<span class="hljs-string">@&quot;bundle&quot;</span>]];
+<span class="hljs-built_in">UIImage</span> *bundleImage = [<span class="hljs-built_in">UIImage</span> imageNamed:<span class="hljs-string">@&quot;1&quot;</span> inBundle:bundle withConfiguration:<span class="hljs-literal">nil</span>];
+</code></pre>
+<p>s.resource_bundles&#x65B9;&#x5F0F;cocoaPods&#x4F1A;&#x5C06;&#x6307;&#x5B9A;&#x7684;&#x8D44;&#x6E90;&#x6253;&#x5305;&#x8FDB;&#x5355;&#x72EC;&#x7684;bundle&#x4E4B;&#x4E2D;&#xFF0C;&#x662F;&#x5728;&#x6A21;&#x5757;&#x5316;&#x5927;&#x578B;&#x9879;&#x76EE;&#x4E2D;&#x66F4;&#x5408;&#x9002;&#x7684;&#x5904;&#x7406;&#x8D44;&#x6E90;&#x7684;&#x65B9;&#x5F0F;</p>
+<h2 id="cocoapods&#x6A21;&#x5757;&#x5316;&#x9879;&#x76EE;&#x4E2D;&#x5BF9;&#x8D44;&#x6E90;&#x7684;&#x5904;&#x7406;">cocoaPods&#x6A21;&#x5757;&#x5316;&#x9879;&#x76EE;&#x4E2D;&#x5BF9;&#x8D44;&#x6E90;&#x7684;&#x5904;&#x7406;</h2>
+<p>&#x5728;&#x6A21;&#x5757;&#x5316;&#x9879;&#x76EE;&#x4E2D;&#x7531;&#x4E8E;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x72EC;&#x7ACB;&#x5F00;&#x53D1;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5927;&#x578B;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x4E1A;&#x52A1;&#x5F00;&#x53D1;&#x8005;&#x5F88;&#x96BE;&#x53BB;&#x5173;&#x6CE8;&#x81EA;&#x5DF1;&#x6A21;&#x5757;&#x7684;&#x8D44;&#x6E90;&#x95EE;&#x9898;&#xFF0C;&#x5305;&#x62EC; <strong>&#x5F15;&#x5165;&#x4E86;&#x8F83;&#x5927;&#x56FE;&#x7247;</strong>&#xFF0C; <strong>&#x56FE;&#x7247;&#x5C1A;&#x4E14;&#x6709;&#x53EF;&#x538B;&#x7F29;&#x7684;&#x7A7A;&#x95F4;</strong>&#xFF0C; <strong>&#x5F15;&#x5165;&#x7684;&#x56FE;&#x7247;&#x5728;&#x522B;&#x7684;&#x6A21;&#x5757;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;</strong>&#x7B49;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x8FDB;&#x884C;&#x6574;&#x5305;&#x6784;&#x5EFA;&#x65F6;&#x5019;&#x6709;&#x5FC5;&#x8981;&#x9879;&#x76EE;&#x4EA7;&#x7269;&#x7684;&#x8D44;&#x6E90;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x5217;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x5305;&#x62EC;</p>
+<ol>
+<li>&#x627E;&#x51FA;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x4E0D;&#x89C4;&#x8303;&#x7684;&#x6A21;&#x5757;</li>
+<li>&#x5BF9;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x8D44;&#x6E90;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;</li>
+<li>&#x5BF9;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x65E0;&#x635F;&#x538B;&#x7F29;&#xFF0C;&#x5E76;&#x627E;&#x51FA;&#x8FC7;&#x5927;&#x8D44;&#x6E90;&#x6587;&#x4EF6;</li>
+<li>&#x627E;&#x51FA;&#x53EF;&#x80FD;&#x7684;&#x76F8;&#x4F3C;&#x56FE;&#x7247;</li>
+</ol>
 
                                 
                                 </section>
@@ -207,12 +269,8 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
-                
-                <a href="资源管理.html" class="navigation navigation-next " aria-label="Next page: 资源管理">
+                <a href="资源管理.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 资源管理">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -223,7 +281,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"iOS","level":"1.2","depth":1,"next":{"title":"资源管理","level":"1.2.1","depth":2,"path":"iOS/资源管理.md","ref":"iOS/资源管理.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/资源管理.md","mtime":"2024-01-23T07:55:25.901Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-23T10:07:05.629Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"iOS","level":"1.3","depth":1,"next":{"title":"资源管理","level":"1.3.1","depth":2,"path":"iOS/资源管理.md","ref":"iOS/资源管理.md","articles":[]},"previous":{"title":"[个人介绍]","level":"1.2","depth":1,"ref":"","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/资源管理.md","mtime":"2024-01-23T13:20:50.149Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-23T13:26:50.916Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -231,10 +289,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
