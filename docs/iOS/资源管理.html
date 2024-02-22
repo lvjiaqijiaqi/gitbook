@@ -180,7 +180,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="cocoapods&#x7BA1;&#x7406;ios&#x8D44;&#x6E90;">CocoaPods&#x7BA1;&#x7406;iOS&#x8D44;&#x6E90;</h1>
-<p>&#x5728;&#x5927;&#x578B;&#x6A21;&#x5757;&#x5316;&#x9879;&#x76EE;&#x4E2D;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x8D44;&#x6E90;&#xFF0C;iOS&#x901A;&#x5E38;&#x901A;&#x8FC7;CocoaPods&#x53BB;&#x7BA1;&#x7406;&#x8D44;&#x6E90;&#xFF0C;&#x5305;&#x62EC;&#x8D44;&#x6E90;&#x7684;&#x5F15;&#x5165;&#x548C;&#x6784;&#x5EFA;</p>
+<p>&#x5728;&#x5927;&#x578B;&#x6A21;&#x5757;&#x5316;&#x9879;&#x76EE;&#x4E2D;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x8D44;&#x6E90;&#xFF0C;iOS&#x901A;&#x5E38;&#x901A;&#x8FC7;CocoaPods&#x53BB;&#x7BA1;&#x7406;&#x8D44;&#x6E90;&#xFF0C;&#x5C06;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x8D44;&#x6E90;&#x5728;&#x6574;&#x5305;&#x6784;&#x5EFA;&#x65F6;&#x5019;&#x8FDB;&#x884C;&#x6784;&#x5EFA;&#x548C;&#x590D;&#x5236;  </p>
 <h2 id="podspec&#x58F0;&#x660E;&#x8D44;&#x6E90;&#x5F15;&#x5165;&#x7684;&#x65B9;&#x5F0F;">.podspec&#x58F0;&#x660E;&#x8D44;&#x6E90;&#x5F15;&#x5165;&#x7684;&#x65B9;&#x5F0F;</h2>
 <h3 id="sresources">s.resources</h3>
 <p>&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x590D;&#x5236;&#x5230;&#x4EA7;&#x7269;&#x4E2D;</p>
@@ -225,13 +225,60 @@ install_resource &quot;${PODS_CONFIGURATION_BUILD_DIR}/JQ_bundle_source/JQ_bundl
 </code></pre>
 <p>s.resource_bundles&#x65B9;&#x5F0F;cocoaPods&#x4F1A;&#x5C06;&#x6307;&#x5B9A;&#x7684;&#x8D44;&#x6E90;&#x6253;&#x5305;&#x8FDB;&#x5355;&#x72EC;&#x7684;bundle&#x4E4B;&#x4E2D;&#xFF0C;&#x662F;&#x5728;&#x6A21;&#x5757;&#x5316;&#x5927;&#x578B;&#x9879;&#x76EE;&#x4E2D;&#x66F4;&#x5408;&#x9002;&#x7684;&#x5904;&#x7406;&#x8D44;&#x6E90;&#x7684;&#x65B9;&#x5F0F;</p>
 <h2 id="cocoapods&#x6A21;&#x5757;&#x5316;&#x9879;&#x76EE;&#x4E2D;&#x5BF9;&#x8D44;&#x6E90;&#x7684;&#x5904;&#x7406;">cocoaPods&#x6A21;&#x5757;&#x5316;&#x9879;&#x76EE;&#x4E2D;&#x5BF9;&#x8D44;&#x6E90;&#x7684;&#x5904;&#x7406;</h2>
-<p>&#x5728;&#x6A21;&#x5757;&#x5316;&#x9879;&#x76EE;&#x4E2D;&#x7531;&#x4E8E;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x72EC;&#x7ACB;&#x5F00;&#x53D1;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5927;&#x578B;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x4E1A;&#x52A1;&#x5F00;&#x53D1;&#x8005;&#x5F88;&#x96BE;&#x53BB;&#x5173;&#x6CE8;&#x81EA;&#x5DF1;&#x6A21;&#x5757;&#x7684;&#x8D44;&#x6E90;&#x95EE;&#x9898;&#xFF0C;&#x5305;&#x62EC; <strong>&#x5F15;&#x5165;&#x4E86;&#x8F83;&#x5927;&#x56FE;&#x7247;</strong>&#xFF0C; <strong>&#x56FE;&#x7247;&#x5C1A;&#x4E14;&#x6709;&#x53EF;&#x538B;&#x7F29;&#x7684;&#x7A7A;&#x95F4;</strong>&#xFF0C; <strong>&#x5F15;&#x5165;&#x7684;&#x56FE;&#x7247;&#x5728;&#x522B;&#x7684;&#x6A21;&#x5757;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;</strong>&#x7B49;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x8FDB;&#x884C;&#x6574;&#x5305;&#x6784;&#x5EFA;&#x65F6;&#x5019;&#x6709;&#x5FC5;&#x8981;&#x9879;&#x76EE;&#x4EA7;&#x7269;&#x7684;&#x8D44;&#x6E90;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x5217;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x5305;&#x62EC;</p>
+<p>&#x5728;&#x6A21;&#x5757;&#x5316;&#x9879;&#x76EE;&#x4E2D;&#x7531;&#x4E8E;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x72EC;&#x7ACB;&#x5F00;&#x53D1;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5927;&#x578B;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x4E1A;&#x52A1;&#x5F00;&#x53D1;&#x8005;&#x5F88;&#x96BE;&#x53BB;&#x5173;&#x6CE8;&#x81EA;&#x5DF1;&#x6A21;&#x5757;&#x7684;&#x8D44;&#x6E90;&#x95EE;&#x9898;&#xFF0C;&#x5305;&#x62EC; <strong>&#x5F15;&#x5165;&#x4E86;&#x8F83;&#x5927;&#x56FE;&#x7247;</strong>&#xFF0C; <strong>&#x56FE;&#x7247;&#x5C1A;&#x4E14;&#x6709;&#x53EF;&#x538B;&#x7F29;&#x7684;&#x7A7A;&#x95F4;</strong>&#xFF0C; <strong>&#x5F15;&#x5165;&#x7684;&#x56FE;&#x7247;&#x5728;&#x522B;&#x7684;&#x6A21;&#x5757;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;</strong>&#x7B49;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x8FDB;&#x884C;&#x6574;&#x5305;&#x6784;&#x5EFA;&#x65F6;&#x5019;&#x6709;&#x5FC5;&#x8981;&#x9879;&#x76EE;&#x4EA7;&#x7269;&#x7684;&#x8D44;&#x6E90;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x5217;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x4EE5;&#x4F18;&#x5316;&#x5305;&#x5927;&#x5C0F;&#x548C;&#x786E;&#x4FDD;&#x9879;&#x76EE;&#x7684;&#x7A33;&#x5B9A;&#x6027;&#xFF0C;&#x65B9;&#x5F0F;&#x5305;&#x62EC;</p>
 <ol>
 <li>&#x627E;&#x51FA;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x4E0D;&#x89C4;&#x8303;&#x7684;&#x6A21;&#x5757;</li>
 <li>&#x5BF9;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x8D44;&#x6E90;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;</li>
 <li>&#x5BF9;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x65E0;&#x635F;&#x538B;&#x7F29;&#xFF0C;&#x5E76;&#x627E;&#x51FA;&#x8FC7;&#x5927;&#x8D44;&#x6E90;&#x6587;&#x4EF6;</li>
 <li>&#x627E;&#x51FA;&#x53EF;&#x80FD;&#x7684;&#x76F8;&#x4F3C;&#x56FE;&#x7247;</li>
 </ol>
+<h3 id="&#x627E;&#x51FA;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x4E0D;&#x89C4;&#x8303;&#x7684;&#x6A21;&#x5757;">&#x627E;&#x51FA;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x4E0D;&#x89C4;&#x8303;&#x7684;&#x6A21;&#x5757;</h3>
+<p>&#x5728;&#x5927;&#x578B;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x4E00;&#x822C;&#x4E0D;&#x5E0C;&#x671B;&#x6A21;&#x5757;&#x7684;&#x8D44;&#x6E90;&#x76F4;&#x63A5;copy&#x5728;&#x4EA7;&#x7269;&#x7684;&#x4E00;&#x7EA7;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x4F7F;&#x5F97;&#x4EA7;&#x7269;&#x76EE;&#x5F55;&#x6DF7;&#x4E71;&#x5E76;&#x4E14;&#x4E0D;&#x80FD;&#x5F88;&#x6E05;&#x6670;&#x7684;&#x8868;&#x73B0;&#x5904;&#x8D44;&#x6E90;&#x5C5E;&#x4E8E;&#x54EA;&#x4E2A;&#x6A21;&#x5757;  <strong>&#x7C7B;&#x4F3C;&#x4E8E;&#x4E0B;&#x9762;&#x8FD9;&#x79CD;podspec&#x5199;&#x6CD5;</strong> &#x4E0D;&#x63A8;&#x8350;</p>
+<pre><code>s.resources = [&apos;module/images/*&apos;]
+</code></pre><p>&#x8981;&#x68C0;&#x6D4B;&#x51FA;&#x8FD9;&#x4E9B;&#x4E0D;&#x89C4;&#x8303;&#x7684;&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x626B;&#x63CF;cocoaPods&#x7F13;&#x5B58;&#x91CC;&#x6A21;&#x5757;&#x5BF9;&#x5E94;&#x7684;podspec&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x901A;&#x8FC7;Pods-xxx-resources.sh&#x83B7;&#x53D6;&#x5230;install_resource&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x8FC7;&#x6EE4;&#x7B5B;&#x51FA;, <strong>&#x5728;build phases&#x6DFB;&#x52A0;&#x4E0B;&#x9762;&#x7C7B;&#x4F3C;&#x811A;&#x672C;&#x5373;&#x53EF;</strong></p>
+<pre><code class="lang-shell">path=&quot;`pwd`/Pods/Target Support Files/Pods-JQ_bundle_project/Pods-JQ_bundle_project-resources.sh&quot;
+grep -E &quot;install_resource&quot; &quot;$path&quot; | while read -r line; do
+    path=$(echo &quot;$line&quot; | sed -E &apos;s/.*install_resource &quot;(.+)&quot;/\1/&apos;)
+    filename=$(basename &quot;$path&quot;)
+    extension=&quot;${filename##*.}&quot;
+    if [ &quot;$extension&quot; != &quot;bundle&quot; ]; then
+        echo &quot;invalid path: $path&quot;
+    fi
+done
+</code></pre>
+<h3 id="&#x5BF9;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x8D44;&#x6E90;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;">&#x5BF9;&#x6BCF;&#x4E2A;&#x6A21;&#x5757;&#x8D44;&#x6E90;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x7EDF;&#x8BA1;</h3>
+<p>&#x7EDF;&#x8BA1;&#x5927;&#x5C0F;&#x5E76;&#x4E0D;&#x80FD;&#x7CBE;&#x786E;&#xFF0C;&#x4E00;&#x65B9;&#x9762;&#x56E0;&#x4E3A;&#x901A;&#x5E38;Asset&#x6587;&#x4EF6;&#x6700;&#x7EC8;&#x7ECF;&#x8FC7;&#x538B;&#x7F29;&#x7F16;&#x8BD1;&#x6210;.car&#xFF0C;&#x53E6;&#x5916;&#x4E00;&#x65B9;&#x9762;&#x6709;&#x591A;x&#x56FE;&#x7247;&#x65F6;&#x5019;&#x5B9E;&#x9645;&#x4E0A;&#x5728;&#x7279;&#x5B9A;&#x673A;&#x578B;&#x4E0A;&#x53EA;&#x4F1A;&#x5B89;&#x88C5;&#x4E00;&#x79CD;&#xFF0C;&#x4F46;&#x662F;&#x8BA1;&#x7B97;&#x51FA;&#x8D44;&#x6E90;&#x5927;&#x5C0F;&#x7684;&#x53D8;&#x5316;&#x4EE5;&#x63A7;&#x5236;&#x5305;&#x5927;&#x5C0F;&#x589E;&#x957F;, &#x76F4;&#x63A5;&#x626B;&#x63CF;&#x4EA7;&#x7269;&#x76EE;&#x5F55;&#x5373;&#x53EF;</p>
+<pre><code class="lang-shell">find &quot;$BUILT_PRODUCTS_DIR&quot; -name &quot;*.bundle&quot; | while read -r file; do
+    size=$(du -h &quot;$file&quot; | cut -f1)
+    filename=$(basename &quot;$file&quot;)
+    echo &quot;Bundle: $filename, Size: $size&quot;
+done
+</code></pre>
+<p>&#x5728;&#x83B7;&#x53D6;&#x5230;&#x5F53;&#x6B21;&#x8D44;&#x6E90;&#x5927;&#x5C0F;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x548C;&#x4E4B;&#x524D;&#x4F5C;&#x4E3A;&#x5BF9;&#x6BD4;&#xFF0C;&#x6700;&#x7EC8;&#x8F93;&#x51FA;&#x4E00;&#x4EFD;&#x62A5;&#x544A;</p>
+<h3 id="&#x5BF9;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x65E0;&#x635F;&#x538B;&#x7F29;&#xFF0C;&#x5E76;&#x627E;&#x51FA;&#x8FC7;&#x5927;&#x8D44;&#x6E90;&#x6587;&#x4EF6;">&#x5BF9;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x65E0;&#x635F;&#x538B;&#x7F29;&#xFF0C;&#x5E76;&#x627E;&#x51FA;&#x8FC7;&#x5927;&#x8D44;&#x6E90;&#x6587;&#x4EF6;</h3>
+<p>&#x73B0;&#x5728;&#x5927;&#x578B;&#x9879;&#x76EE;&#x91CC;&#x90FD;&#x662F;&#x4E8C;&#x8FDB;&#x5236;&#x5316;&#x6A21;&#x5757;&#xFF0C;&#x5982;&#x679C;&#x6A21;&#x5757;&#x7684;bundle&#x672C;&#x6765;&#x5C31;&#x5DF2;&#x7ECF;&#x7F16;&#x8BD1;&#x6210;.car&#xFF0C;&#x5219;&#x56FE;&#x7247;&#x65E0;&#x6CD5;&#x5728;&#x538B;&#x7F29;&#xFF1B;&#x6574;&#x4E2A;&#x56E2;&#x961F;&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x5728;&#x6574;&#x5305;&#x6784;&#x5EFA;&#x7EDF;&#x4E00;&#x538B;&#x7F29;&#x4E4B;&#x540E;&#x7F16;&#x8BD1;&#x6210;.car&#xFF0C;&#x8FD9;&#x6837;&#x65B9;&#x4FBF;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;</p>
+<pre><code class="lang-shell">
+compile_xcassets() {
+    local xcassets_path=&quot;$1&quot;
+    local output_car=&quot;$2&quot;
+
+    echo &quot;Compiling .xcassets file: $xcassets_path&quot;
+    xcrun actool --output-format human-readable-text --notices --warnings --export-dependency-info build/asset_dependencies.plist --output-partial-info-plist build/asset_partial_info.plist --compress-pngs --compile &quot;$output_car&quot; &quot;$xcassets_path&quot;
+}
+
+find &quot;$BUILT_PRODUCTS_DIR&quot; -name &quot;*.bundle&quot; | while IFS= read -r bundle; do
+    find &quot;$bundle&quot; -name &quot;*.png&quot; -print0 | while IFS= read -r -d &apos;&apos; png; do
+        echo &quot;Found PNG file: $png&quot;
+        # &#x538B;&#x7F29;&#x56FE;&#x7247;
+    done
+    xcassets_files=$(find &quot;$bundle&quot; -name &quot;*.xcassets&quot;)
+    for xcassets in $xcassets_files; do
+        car_output=&quot;${bundle}/${xcassets##*/}.car&quot;
+        compile_xcassets &quot;$xcassets&quot; &quot;$car_output&quot;
+    done
+done
+</code></pre>
+<h3 id="&#x627E;&#x51FA;&#x53EF;&#x80FD;&#x7684;&#x76F8;&#x4F3C;&#x56FE;&#x7247;">&#x627E;&#x51FA;&#x53EF;&#x80FD;&#x7684;&#x76F8;&#x4F3C;&#x56FE;&#x7247;</h3>
 
                                 
                                 </section>
@@ -275,7 +322,7 @@ install_resource &quot;${PODS_CONFIGURATION_BUILD_DIR}/JQ_bundle_source/JQ_bundl
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"iOS","level":"1.2","depth":1,"next":{"title":"资源管理","level":"1.2.1","depth":2,"path":"iOS/资源管理.md","ref":"iOS/资源管理.md","articles":[]},"previous":{"title":"个人介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/资源管理.md","mtime":"2024-01-23T13:30:51.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-23T13:33:46.533Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"iOS","level":"1.2","depth":1,"next":{"title":"资源管理","level":"1.2.1","depth":2,"path":"iOS/资源管理.md","ref":"iOS/资源管理.md","articles":[]},"previous":{"title":"个人介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iOS/资源管理.md","mtime":"2024-02-22T15:12:38.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-02-22T15:19:30.133Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
